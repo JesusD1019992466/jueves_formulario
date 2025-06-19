@@ -1,175 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro Avanzado</title>
     <link rel="stylesheet" href="style.css">
-    <title>html forms</title>
 </head>
 <body>
-    <header><h1>Formulario</h1></header>
-    <br>
-    <main>
-        <section>
-            <div>
-            <form action="">
-            
+    <header>
+        <h1>Formulario de Registro</h1>
+        <p>Complete todos los campos para continuar</p>
+    </header>
 
-                <label for="button"></label><br>
-                <input type="button"
-                name="button"
-                id="button"
-                value="Formulario de Registro"
-                onclick="alert('Bienvenido al formulario de registro')"><br>
+    <div class="container">
 
-                </label><br>
-               
-                <label for="fname">Nombres:</label><br>
-                <input type="text" 
-                name="name"
-                id="fname"
-                required
-                placeholder="Ingrese sus nombres"
-                autofocus
-                pattern="[A-Za-z\s]+{3,40}"><br><br>
-
-                
-                <label for="lname">Apellidos:</label><br>
-                <input type="text"
-                name="lname"
-                id="lname"
-                required
-                placeholder="Ingrese sus apellidos"
-                autofocus
-                pattern="[A-Za-z\s]+{3,40}"><br><br>
-              
-
-                
-                <label for="email">Correo:</label><br>
-                <input type="email"
-                name="email"
-                id="email"
-                required1
-                placeholder="Ingrese su correo electrónico"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
-              
-
-                 <label for="password">Contraseña:</label><br>
-                <input type="password"
-                name="password"
-                id="password"
-                required    
-                placeholder="Ingrese su contraseña"
-                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br><br>
-              
-
-                <label for="tel">Teléfono:</label><br>
-                <input type="tel"
-                name="phone"
-                id="phone"
-                required
-                placeholder="Ingrese su número de teléfono"
-                pattern="^\d{10}$"><br><br>
-              
-
-                <label for="gender">Género:</label><br>
-                <input type="radio"
-                    name="gender"
-                    id="gender-masculino"
-                    value="Masculino">
-                <label for="gender-masculino">Masculino</label><br>
-                <input type="radio"
-                    name="gender"
-                    id="gender-femenino"
-                    value="Femenino">
-                <label for="gender-femenino">Femenino</label><br><br>
-              
-
-
-                <label for="date">Fecha de Nacimiento</label><br><br>
-                <input type="date"
-                name="date"
-                id="date"
-                required
-                placeholder="Ingrese su fecha de nacimiento"
-                min="1900-01-01"
-                max="2025-12-31"><br><br>
-
-
-                <label for="bdaymonth">Mes en que realizo el formulario:</label><br><br>
-                <input type="month" id="bdaymonth" name="bdaymonth"><br><br>
-
-
-                <label for="week">Semana en la que realizo el formulario:</label><br><br>
-                <input type="week" id="week" name="week"><br><br>
-              
-                <label for ="color">Selecciona un color que le guste</label><br>
-                <input type="checkbox"
-                    id="color-azul"
-                    name="color"
-                    value="1">
-                <label for="color-azul">Azul</label><br>
-                <input type="checkbox"
-                    id="color-rojo"
-                    name="color"
-                    value="2">
-                <label for="color-rojo">Rojo</label><br>
-                <input type="checkbox"
-                    id="color-verde"
-                    name="color"
-                    value="3">
-                <label for="color-verde">Verde</label><br>
-                <input type="checkbox"
-                    id="color-amarillo"
-                    name="color"
-                    value="4">
-                <label for="color-amarillo">Amarillo</label><br><br>
-
-                <label>Color favorito:</label>
-                <input type="color" 
-                    name="color"><br><br>
-
-                 <label>Número (1 a 10):</label>
-                <input type="number"
-                    name="numero"
-                    min="1" 
-                    max="10"><br><br>
-
-                <label for="select">Hora</label><br>
-                <input type="time"
-                    id="select"
-                    name="selec"><br><br>                
-
-                <label for="select">Escribe la URL</label><br><br>
-                <label for="homepage">Añade tu pagina:</label>
-                <input type="url" id="homepage" name="homepage"><br><br>
-
-                <label for="myfile">Selecciona el archivo:</label>
-                <input type="file" id="myfile" name="myfile"><br><br>
-
-                <label for="vol">Satisfaccion del formulario:</label><br><br>
-                <input type="range" id="vol" name="vol" min="0" max="50"><br>
-
-                <label for="gsearch">Buscar</label><br>
-                <input type="search" id="gsearch" name="gsearch"><br><br>
-                <input type="image" src="../img/img_submit.gif" alt="Submit" width="48" height="48"><br><br>
-                    
-                <input type="reset" value="Limpiar">
-                <input type="submit" value="Enviar">           
-
-
-
-
-                
-        
-
-                
-            </form>
+        <form id="formularioAvanzado">
+            <!-- Nombre completo -->
+            <div class="form-group">
+                <label for="nombreCompleto">Nombre completo *</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" 
+                       placeholder="Ingrese su nombre completo" required>
+                <div class="mensaje-error" id="errorNombre"></div>
+                <div class="mensaje-exito" id="exitoNombre"></div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025</p>
-    </footer>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="correo">Correo electrónico *</label>
+                <input type="email" id="correo" name="correo" 
+                       placeholder="ejemplo@correo.com" required>
+                <div class="mensaje-error" id="errorCorreo"></div>
+                <div class="mensaje-exito" id="exitoCorreo"></div>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="form-group">
+                <label for="password">Contraseña *</label>
+                <input type="password" id="password" name="password" 
+                       placeholder="Mínimo 8 caracteres" required>
+                <div class="password-strength" id="strengthBar"></div>
+                <div class="mensaje-error" id="errorPassword"></div>
+                <div class="mensaje-exito" id="exitoPassword"></div>
+            </div>
+
+            <!-- Confirmar contraseña -->
+            <div class="form-group">
+                <label for="confirmarPassword">Confirmar contraseña *</label>
+                <input type="password" id="confirmarPassword" name="confirmarPassword" 
+                       placeholder="Repita su contraseña" required>
+                <div class="mensaje-error" id="errorConfirmar"></div>
+                <div class="mensaje-exito" id="exitoConfirmar"></div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" 
+                       placeholder="300-123-4567" required>
+                <div class="mensaje-error" id="errorTelefono"></div>
+                <div class="mensaje-exito" id="exitoTelefono"></div>
+            </div>
+
+            <!-- Fecha de nacimiento -->
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de nacimiento *</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <div class="mensaje-error" id="errorFecha"></div>
+                <div class="mensaje-exito" id="exitoFecha"></div>
+            </div>
+
+            <!-- Género -->
+            <div class="form-group">
+                <label>Género *</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="genero" value="masculino" required>
+                        Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="femenino" required>
+                        Femenino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="otro" required>
+                        Otro
+                    </label>
+                </div>
+            </div>
+
+            <!-- Intereses -->
+            <div class="form-group">
+                <label>Intereses</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="intereses" value="deportes">
+                        Deportes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="intereses" value="musica">
+                        Música
+                    </label>
+                    <label>
+                        <input type="checkbox" name="intereses" value="tecnologia">
+                        Tecnología
+                    </label>
+                    <label>
+                        <input type="checkbox" name="intereses" value="arte">
+                        Arte
+                    </label>
+                </div>
+            </div>
+
+            <!-- Comentarios -->
+            <div class="form-group">
+                <label for="comentarios">Comentarios adicionales</label>
+                <textarea id="comentarios" name="comentarios" 
+                          placeholder="Escriba cualquier comentario adicional..." 
+                          maxlength="500"></textarea>
+                <div class="char-counter">
+                    <span id="contadorComentarios">0</span>/500 caracteres
+                </div>
+            </div>
+
+            <!-- Términos y condiciones -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    Acepto los términos y condiciones *
+                </label>
+                <div class="mensaje-error" id="errorTerminos"></div>
+            </div>
+
+            <!-- Botones -->
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" id="btnEnviar" disabled>
+                    Enviar Formulario
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="reiniciarFormulario()">
+                    Limpiar Todo
+                </button>
+            </div>
+        </form>
+
+        <!-- Resumen de datos -->
+        <div class="resumen-datos" id="resumenDatos">
+            <h3>✅ Datos enviados correctamente</h3>
+            <div id="contenidoResumen"></div>
+            <div class="button-group" style="margin-top: 20px;">
+                <button type="button" class="btn btn-secondary" onclick="reiniciarFormulario()">
+                    Nuevo Registro
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
